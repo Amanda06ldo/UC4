@@ -1,13 +1,6 @@
 var leitor = require("readline-sync")
-var n = true
-while(n){
-    let opt = leitor.question('')
-    switch(opt){
-        case '1':
-            !n
-            break 
-    }
-}
+
+
 class Professor {
     nome:string
     idade:number
@@ -35,25 +28,25 @@ class Professor {
 }
 class Escola{
     trabalhador: Professor
-    nome : string
+    nomeEscola : string
     endereço : string
     num_end: number
-    constructor(trabalhador: Professor, nome:string,endereço:string,num_end:number){
+    constructor(trabalhador: Professor, nomeEscola:string,endereço:string,num_end:number){
         this.trabalhador = trabalhador
-        this.nome = nome
+        this.nomeEscola = nomeEscola
         this.endereço = endereço
         this.num_end = num_end
 
     }
     getEscola():void{
-        console.log(`Olá, minha escola é o ${this.nome},no endereço ${this.endereço} no número ${this.num_end} e o nome do professor é ${this.trabalhador.nome}`)
+        console.log(`Olá, minha escola é o ${this.nomeEscola},no endereço ${this.endereço} no número ${this.num_end} e o nome do professor é ${this.trabalhador.nome}`)
     }
     setEscola():void{
         this.trabalhador.getProfessor()
-        let nomeUp = leitor.question("Qual o nome da escola?")
+        let nomeEscolaUp = leitor.question("Qual o nome da escola?")
         let endereçoUp = leitor.question("Qual o endereço do escola?")
         let num_endUp = leitor.question("Qual o número do escola?")
-        this.nome = nomeUp
+        this.nomeEscola = nomeEscolaUp
         this.endereço = endereçoUp
         this.num_end = num_endUp
 
@@ -61,23 +54,37 @@ class Escola{
     }
 
 }
-/*
-//instancia da classe cozinheiro
-let chefThalles = new Cozinheiro("Thalles",35,15)
-//instancia da classe restaurante agregada com o objeto da classe cozinheiro
-let variatto = new Restaurante(chefThalles,"Variatto","Av. Imperatriz",500)
-console.log(variatto.cz)
-*/
-let professorNovo = new Professor("Teste", 50, 20)
-professorNovo.getProfessor()
 
-professorNovo.setProfessor()
+let profNovo = new Professor("",0 ,0)
+let escolaNova = new Escola(profNovo, "","",0)
+let menu = true
+while(menu){
+    let questao = leitor.questionInt("Escolha a opção \n 1 - Cadastrar Prof. \n 2 - Cadastrar Escola \n 3 - Atualizar Prof. \n 4 - Atualizar Escola \n 5 - Visualizar Prof. \n 6 - Atualizar escola \n 0 - Sair n\ escolha uma opção:")
+    switch(questao){
+        case 1:
+            profNovo.setProfessor()
+            break
+        case 2: 
+            escolaNova.setEscola()
+            break
+        case 3:
+            profNovo.getProfessor()
+            break
+        case 4:
+            escolaNova.setEscola()
+            break
+        case 5:
+            profNovo.setProfessor()
+            break
+        case 6:
+            escolaNova.setEscola()
+            break
+            case 0:
+            !menu
+            process.exit(0)
+    }
+}
 
-professorNovo.getProfessor()
 
-let escolaNovo = new Escola(professorNovo,"Variatto","Av. Imperatriz",500)
-escolaNovo.getEscola()
-escolaNovo.setEscola()
-escolaNovo.getEscola()
 
    
