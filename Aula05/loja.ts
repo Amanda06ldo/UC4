@@ -91,4 +91,4 @@ vendaUp.getVendas()
 
 //npm i --save-dev @types/node
 //npm i readline-sync
-//npx tsc index.t
+//,
