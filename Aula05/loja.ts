@@ -48,34 +48,34 @@ class Venda {
 
 
     valorDaCompra ():void {
-        let quantidadeUp = leitor.question('Quantos produtos voce quer comprar? ')
+        let quantidadeUp = leitor.question('Quantos produtos voce quer comprar no total? ')
         this.quantidade = quantidadeUp
         this.valorTotal = quantidadeUp * this.produto.precoComprado
-    console.log(` Sua compra foi realizada,  na venda foi comprado essa quantidade: ${quantidadeUp}. O valor total foi: R$ ${this.valorTotal} `)
+    console.log(` Sua compra foi realizada,  na venda foi comprado essa quantidade no total: ${quantidadeUp} e o  valor total foi: R$ ${this.valorTotal} `)
     }
 
     getVendas (): void{
-        console.log(`Informacoes sobre a Venda: Produto: ${this.produto.nome}, Qual a marca do produto: ${this.produto.marca}, Quantidade: ${this.quantidade}, Valor Total:${this.valorTotal}, Data:${this.data}.`)
+        console.log(`Informacoes sobre a Venda: Produto: ${this.produto.nome},  Marca do produto: ${this.produto.marca}, Quantidade: ${this.quantidade}, Valor Total:${this.valorTotal}, Data:${this.data}.`)
     }
 
     setVenda (): void{
         this.produto.setProduto()
-        let dataUp = leitor.question('Qual foi a data do produto que voce comprou? (Utilize até a data 00/00/00) ')
+        let dataUp = leitor.question('Qual foi a data do produto que voce comprou? (Utilize até a data de expiração) ')
         this.data = dataUp
         
     }
     
     aplicarDescontos(): void{
         let CompraComDesconto = this.valorTotal * 0.2
-        console.log(`  Parabens, voce ganhou um desconto de 30% em suas novas compras, agora seu valor total reduziu para: ${CompraComDesconto}`)
+        console.log(`  Parabens, voce ganhou um desconto de 30% em suas novas compras, agora seu valor total pode ser reduzido para: ${CompraComDesconto}`)
     }
     
     
 }
 let produtoVazio = new Produto('',0,'',0)
-let produtoTvUp = new Produto('Tv',100000999,'Samsung',234098)
-let produtoCelularUp = new Produto('Celular',10987,'Motorola',8765)
-let produtoNotebookUp = new Produto('Notebook',1067987,'Apple',9765)
+let produtoTvUp = new Produto('Televisao',10008889,'LG',2896)
+let produtoCelularUp = new Produto('Celular',178087,'Samsung',9765)
+let produtoNotebookUp = new Produto('Computador',926734,'Lenovo',47089)
 let vendaTv = new Venda(produtoTvUp)
 
 
