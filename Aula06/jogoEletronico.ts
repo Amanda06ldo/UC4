@@ -4,11 +4,10 @@ var rl = require('readline-sync')
 
 export class jogoEletronico extends Jogo {
     plataforma:string
-    super(titulo:string, genero:string, classificacaoEtaria:number, plataforma:string){
-        this.titulo = titulo
-        this.genero = genero
-        this.classificacaoEtaria = classificacaoEtaria
-        this.plataforma = plataforma
+    constructor(titulo : string, genero:string, classificacaoEtaria : number){
+
+        super(titulo,genero,classificacaoEtaria)
+    this.plataforma = this.plataforma
     }
 
    getDetalhes(): void{

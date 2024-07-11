@@ -4,13 +4,11 @@ var rl = require('readline-sync')
 
 export class jogoTabuleiro extends Jogo {
     numeroDeJogadores:number
-    super(titulo:string, genero:string, classificacaoEtaria:number, plataforma:string,numeroDeJogadores:number){
-        this.titulo = titulo
-        this.genero = genero
-        this.classificacaoEtaria = classificacaoEtaria
-        this.numeroDeJogadores = numeroDeJogadores
-    }
+    constructor(titulo : string, genero:string, classificacaoEtaria : number){
 
+        super(titulo,genero,classificacaoEtaria)
+    this.numeroDeJogadores = this.numeroDeJogadores
+    }
    getDetalhes(): void{
         console.log(` O jogo se chama ${this.titulo}, o genero do filme é ${this.genero} e a classificação etaria  do filme é de maiories ${this.classificacaoEtaria} anos, numero de jogadores é ${this.numeroDeJogadores}.`);
         

@@ -1,21 +1,30 @@
 
 var rl = require('readline-sync')
 
-export class Jogo {
-    titulo: string
-    genero: string
+export interface jogoInterface{
+    titulo:string
+    genero:string
     classificacaoEtaria: number
+
+    getDetalhes(): void
+    setJogo():void
+}
+
+export class Jogo implements jogoInterface{
+   public titulo: string
+   public genero: string
+   public classificacaoEtaria: number
 
     constructor(titulo: string, genero: string, classificacaoEtaria: number){
         this.titulo = titulo
         this.genero = genero
         this.classificacaoEtaria = classificacaoEtaria
 }
-   getDetalhes(): void{
+    public getDetalhes(): void{
         console.log(`O jogo se chama ${this.titulo}, o genero do filme é ${this.genero} e a classificação etaria  do filme é de maiories ${this.classificacaoEtaria} anos.`);
         
     }
-     setJogo(): void{
+    public setJogo(): void{
         let newTitulo = rl.question('Digite o titulo:')
         let newGenero = rl.question('Digite o genero:')
         let newClassicacaoEtaria = rl.question('Digite a classificacao etaria:')
@@ -25,3 +34,4 @@ export class Jogo {
         this.classificacaoEtaria = newClassicacaoEtaria
     }
 }
+
