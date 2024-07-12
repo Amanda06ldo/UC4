@@ -17,15 +17,15 @@ export class Carro {
     }
      setCarro(): void{
         let newTanque = reader.question('Digite a quantidade do tanque:')
-        let newKm = reader.question('Digite o km que está:')
-        let newMarca = reader.question('Digite a marca do carro:')
+        let newKm = reader.questionInt('Digite o km que está:')
+        let newMarca = reader.questionInt('Digite a marca do carro:')
         this.tanque = newTanque
         this.km = newKm 
         this.marca = newMarca
     }
 
     Andar(): void{
-        let distancia = reader.question("Qual a distancia que voce quer percorrer?")
+        let distancia = reader.questionInt("Qual a distancia que voce quer percorrer?")
         let gastoGasolina = this.tanque - (distancia / this.km)
         if(gastoGasolina < 0){
             console.log("Voce nao tem gasolina para percorrer essa distancia")
@@ -41,7 +41,7 @@ export class Carro {
     }
 
     adicionarGasolina():void{
-        let abastecer = reader.question("Quanto deseja abastecer o tanque?")
+        let abastecer = reader.questionInt("Quanto deseja abastecer o tanque?")
         console.log(`Voce abasteceu ${abastecer}`)
         this.tanque += abastecer
     }
