@@ -11,15 +11,14 @@ export class Carro {
         this.marca = marca
     }
 
-    public getDetalhes(): void{
+    getCarro(): void{
         console.log(`A marca do carro é ${this.marca}, a quantidade do tanque é ${this.tanque} e  está a ${this.km} por hora. `);
         
     }
-    public setCarro(): void{
+     setCarro(): void{
         let newTanque = reader.question('Digite a quantidade do tanque:')
         let newKm = reader.question('Digite o km que está:')
         let newMarca = reader.question('Digite a marca do carro:')
-
         this.tanque = newTanque
         this.km = newKm 
         this.marca = newMarca
