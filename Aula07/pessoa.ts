@@ -1,3 +1,5 @@
+let rl = require("readline-sync")
+
 class pessoa {
     nome:string
     sobrenome:string
@@ -16,4 +18,12 @@ class pessoa {
         this.cpf = cpf
         this.dataDeNascimento = dataDeNascimento
     }
+    getPessoa(): void{
+        console.log(``);
+        
+    }
+     setPessoa(): void{
+        let newNome = rl.question()
+    }
+
 }

@@ -19,9 +19,23 @@ export class Carro {
         let newTanque = reader.question('Digite a quantidade do tanque:')
         let newKm = reader.questionInt('Digite o km que está:')
         let newMarca = reader.questionInt('Digite a marca do carro:')
-        this.tanque = newTanque
-        this.km = newKm 
-        this.marca = newMarca
+        
+        if(newMarca == ''){
+            this.marca = this.marca
+        }else{
+            this.marca = newMarca
+        }
+
+        if(newKm == ''){
+            this.km = this.km
+        }else{
+            this.km = newKm
+        }
+        if(newTanque == ''){
+            this.tanque = this.tanque
+        }else{
+            this.tanque = newTanque
+        }
     }
 
     Andar(): void{
