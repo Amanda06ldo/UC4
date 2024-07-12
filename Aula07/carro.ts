@@ -11,7 +11,21 @@ export class Carro {
         this.marca = marca
     }
 
-    getAndar(): void{
+    public getDetalhes(): void{
+        console.log(`A marca do carro é ${this.marca}, a quantidade do tanque é ${this.tanque} e  está a ${this.km} por hora. `);
+        
+    }
+    public setCarro(): void{
+        let newTanque = reader.question('Digite a quantidade do tanque:')
+        let newKm = reader.question('Digite o km que está:')
+        let newMarca = reader.question('Digite a marca do carro:')
+
+        this.tanque = newTanque
+        this.km = newKm 
+        this.marca = newMarca
+    }
+
+    Andar(): void{
         let distancia = reader.question("Qual a distancia que voce quer percorrer?")
         let gastoGasolina = this.tanque - (distancia / this.km)
         if(gastoGasolina < 0){
