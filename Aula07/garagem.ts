@@ -19,7 +19,10 @@ export class Garagem{
         removerCarro(marca: string): void{
            let i:number
            for(i = 0; i < this.Carros.length; i++){
-            this.Carros.splice(i,1)[i]
+            if(this.Carros[i].marca === marca){
+                this.Carros.splice(i,1)[i]
+            }
+            
             
            }
 
