@@ -1,12 +1,12 @@
-interface Prova {
+export interface prova {
     constructor(gabarito: []);
     respostaAluno(resposta: string): void;
     acertos(): number;
     nota(): number;
-    maior(outraProva: Prova): void;
+    maior(outraProva: prova): void;
 }
 
-class Prova implements Prova{
+export class prova implements prova{
     gabarito : Array<string>
     num: number = 1
     acertos1: number
@@ -37,7 +37,7 @@ class Prova implements Prova{
         return this.acertos1
     }
 
-    maior(outraProva: Prova): void {
+    maior(outraProva: prova): void {
         if(this.acertos1 > outraProva.acertos1){
             console.log(`Sua nota é maior`);
             

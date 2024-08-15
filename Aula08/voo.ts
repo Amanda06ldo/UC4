@@ -1,6 +1,33 @@
-import { Data } from "./data";
+import { Data } from "./data"
+var rl = require('readline-sync')
 
-interface Voo {
+export class Passageiro {
+    nome: string
+    idade: number
+    cpf: number
+
+    constructor(nome: string,idade:number, cpf: number){
+        this.nome = nome
+        this.idade = idade
+        this.cpf = cpf
+    }
+
+    getPassageiro():void {
+        console.log(`Nome: ${this.nome}, Idade: ${this.idade}, CPF: ${this.cpf}`)
+    }
+
+    setPassageiro():void{
+        let nome = rl.question('Qual o seu nome? ')
+        let idade = rl.questionInt('Qual a sua idade? ')
+        let cpf = rl.questionInt('Qual o seu cpf? ')
+        this.nome = nome
+        this.cpf = cpf
+        this.idade = idade
+    }
+
+}
+
+export interface Voo {
     constructor(numeroVoo: string, data: string);
     proximoLivre(): void;
     verifica(cadeira: number): void;
@@ -11,10 +38,11 @@ interface Voo {
     clone(): Voo;
 }
 
-class Voo implements Voo{
+export class Voo implements Voo{
     public data: string
     public numeroVoo: number
     private cadeira: Array<number>
+    public passageiros: Array<Passageiro> = []
 
      constructor(numeroVoo: number, data: string){
         this.data = data
@@ -85,5 +113,11 @@ class Voo implements Voo{
                     }
             }
             return n
+        }
+
+        public cadastrarPassageiro(){
+            let pass = new Passageiro('',0,0)
+            pass.setPassageiro()
+            this.passageiros.push(pass)
         }
      }
