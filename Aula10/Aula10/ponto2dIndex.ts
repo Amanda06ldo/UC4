@@ -1,9 +1,10 @@
-import{ponto2d}
+import { Ponto2D} from "./ponto2d"
+import { doisParametros } from "./ponto2d"
 
 var rl = require('readline-sync')
 let xUm = rl.questionInt("Insira o Primeiro Valor de x: ")
 let yUm = rl.questionInt("Insira o Primeiro Valor de x: ")
-let opcao = new Ponto2DComCoordenadas(xUm, yUm)
+let opcao = new doisParametros(xUm, yUm)
 let opcao2 = new Ponto2D()
 let menu: boolean = true
 
@@ -53,7 +54,7 @@ switch(option){
     case 0:
         process.exit(0)
     default:
-        console.log(Opcao invalida);
+        console.log(`Opcao invalida`);
         break
 }
 }
