@@ -1,7 +1,11 @@
-import { ponto2d } from "./ponto2d";
+import { Ponto2D} from "./ponto2d"
+import { doisParametros } from "./ponto2d"
 
-var reader = require('readline-sync')
-
+var rl = require('readline-sync')
+let xUm = rl.questionInt("Insira o Primeiro Valor de x: ")
+let yUm = rl.questionInt("Insira o Primeiro Valor de x: ")
+let opcao = new doisParametros(xUm, yUm)
+let opcao2 = new Ponto2D()
 let menu: boolean = true
 
 while(menu){
@@ -15,35 +19,42 @@ while(menu){
         5- equals
         6- toString
         7- distancia
-        8- clone     
-        `
+        8- clone     `
     );
     
-}
 
-let option = reader.questionInt(`Escolha:`)
+
+let option = rl.questionInt(`Escolha:`)
 
 switch(option){
     case 1: 
-       
+    opcao2.get()
         break
     case 2:
-        
+    opcao2.setX()
         break
     case 3:
-        
+    opcao2.setY()
         break
     case 4: 
-        
+    opcao2.movimentacao()
         break
     case 5:
+    console.log(opcao2.equals(opcao))
         break
     case 6:
-
+    opcao2.toString()
         break
+    case 7:
+    console.log(opcao2.distancia(opcao))
+        break
+    case 8:
+    opcao2.clone()
+    break
     case 0:
         process.exit(0)
     default:
         console.log(`Opcao invalida`);
         break
+}
 }

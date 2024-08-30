@@ -1,7 +1,7 @@
 
 var reader = require('readline-sync')
 
-export class ponto2d {
+export class Ponto2D {
     X:number
     Y:number
 
@@ -30,7 +30,7 @@ export class ponto2d {
         this.Y = Y
     }
 
-    equals(outroPonto: ponto2d): boolean {
+    equals(outroPonto: Ponto2D): boolean {
         if (this.X == outroPonto.X && this.Y == outroPonto.Y) {
             console.log(`os pontos são iguais`)
             return true
@@ -44,12 +44,12 @@ export class ponto2d {
         return `X = ${this.X} e Y = ${this.Y}`
     }
 
-    distancia(outroPonto: ponto2d): number{
+    distancia(outroPonto: Ponto2D): number{
         return Math.sqrt((outroPonto.X - this.X) ** 2 + (outroPonto.Y - this.Y) ** 2)
     }
 
     clone(){
-        let newPonto = new ponto2d
+        let newPonto = new Ponto2D
         newPonto.X = this.X
         newPonto.Y = this.Y
 
@@ -58,7 +58,7 @@ export class ponto2d {
     }
 }
 
-class doisParametros extends ponto2d {
+export class doisParametros extends Ponto2D {
     x: number
     y:number
 
@@ -71,10 +71,10 @@ class doisParametros extends ponto2d {
     
 }
 
-class outroObjeto extends ponto2d {
-    outroPonto: ponto2d
+export class outroObjeto extends Ponto2D{
+    outroPonto: Ponto2D
 
-    constructor(outroPonto:ponto2d){
+    constructor(outroPonto:Ponto2D){
         super()
         this.X = outroPonto.X
         this.Y = outroPonto.Y

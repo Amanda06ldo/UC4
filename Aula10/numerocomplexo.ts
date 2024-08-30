@@ -32,7 +32,7 @@ export class NumeroComplexo{
         return newNumeroComplexo
     }
 
-    subitrair(outroNumero: NumeroComplexo): NumeroComplexo{
+    subtrair(outroNumero: NumeroComplexo): NumeroComplexo{
         let newReal = this.numeroReal - outroNumero.numeroReal
         let newImaginario = this.numeroImaginario - outroNumero.numeroImaginario
         let newNumeroComplexo = new NumeroComplexo(newReal,newImaginario)
